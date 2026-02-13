@@ -1,0 +1,317 @@
+═══════════════════════════════════════════════════════════════════════════════
+                        ÍNDICE DEL PROYECTO COMPLETO
+               Simulación de Campo Eléctrico en una Placa
+        Estructura de Datos - Unidad 1 - Actividad 2
+═══════════════════════════════════════════════════════════════════════════════
+
+📚 GUÍA DE ARCHIVOS Y DOCUMENTACIÓN
+───────────────────────────────────────────────────────────────────────────────
+
+ARCHIVO                          │ DESCRIPCIÓN
+─────────────────────────────────┼──────────────────────────────────────────
+GUIA_RAPIDA.txt                  │ Comience aquí - Instrucciones rápidas
+PROYECTO_COMPLETO.txt            │ Resumen integral de todo el proyecto
+README.md                         │ Descripción general y características
+DISENO.md                         │ Análisis detallado del diseño
+INSTALACION.md                    │ Guía de compilación y troubleshooting
+INDICE.txt (este archivo)         │ Índice de contenidos
+
+
+🔧 ARCHIVOS DEL CÓDIGO FUENTE
+───────────────────────────────────────────────────────────────────────────────
+
+ARCHIVO                  │ LÍNEAS │ DESCRIPCIÓN
+────────────────────────┼────────┼─────────────────────────────────────────
+include/Carga.h          │  62    │ Clase Carga + función template
+include/Placa.h          │ 109    │ Clase Placa (template)
+src/main.cpp             │  70    │ Programa principal (ejemplo de uso)
+src/Carga.cpp            │  23    │ Implementación de Carga
+src/ejemplos.cpp         │  96    │ Ejemplos adicionales (opcional)
+CMakeLists.txt           │  23    │ Configuración CMake
+───────────────────────────────────────────────────────────────────────────────
+TOTAL                    │ 383    │ Líneas de código
+
+
+⚙️ ARCHIVOS DE COMPILACIÓN
+───────────────────────────────────────────────────────────────────────────────
+
+ARCHIVO              │ PLATAFORMA │ DESCRIPCIÓN
+─────────────────────┼────────────┼────────────────────────────────────────
+compilar.bat         │ Windows    │ Script de compilación
+compilar.sh          │ Linux/Mac  │ Script de compilación
+CMakeLists.txt       │ Todas      │ Configuración de CMake
+simulacion.exe       │ Windows    │ Ejecutable compilado
+
+
+🎯 CÓMO COMENZAR
+───────────────────────────────────────────────────────────────────────────────
+
+PASO 1: Leer documentación rápida
+  → Abra: GUIA_RAPIDA.txt
+
+PASO 2: Compilar el proyecto
+  → Windows: Ejecute compilar.bat
+  → Linux/Mac: Ejecute bash compilar.sh
+  → Manual: g++ -std=c++17 -o simulacion.exe src/main.cpp src/Carga.cpp -I include
+
+PASO 3: Ejecutar el programa
+  → Windows: .\simulacion.exe
+  → Linux/Mac: ./simulacion
+
+PASO 4: Entender el diseño
+  → Leer: DISENO.md (análisis detallado)
+  → Revisar: Código en include/ y src/
+
+PASO 5: Explorar ejemplos
+  → Modificar: src/main.cpp
+  → Compilar y ejecutar de nuevo
+
+
+📖 DOCUMENTACIÓN DISPONIBLE
+───────────────────────────────────────────────────────────────────────────────
+
+GUIA_RAPIDA.txt
+  • Compilar y ejecutar en 3 pasos
+  • Preguntas frecuentes
+  • Solucionar problemas básicos
+  • Estructura general del código
+  ⏱️ Tiempo de lectura: 5 minutos
+
+README.md
+  • Descripción del problema
+  • Características implementadas
+  • Estructura del proyecto
+  • Fórmulas matemáticas
+  • Conceptos implementados
+  • Requisitos
+  ⏱️ Tiempo de lectura: 10 minutos
+
+DISENO.md
+  • Arquitectura del sistema (diagramas)
+  • Diseño orientado a objetos
+  • Implementación de templates
+  • Fórmulas matemáticas detalladas
+  • Ventajas del diseño
+  • Casos de uso
+  • Posibles mejoras futuras
+  • Referencias
+  ⏱️ Tiempo de lectura: 20 minutos
+
+INSTALACION.md
+  • Requisitos del sistema
+  • Verificación de compiladores
+  • Tres métodos de compilación
+  • Compilación con optimización
+  • Compilación con advertencias
+  • Solución de problemas
+  • Verificación de instalación
+  ⏱️ Tiempo de lectura: 15 minutos
+
+PROYECTO_COMPLETO.txt
+  • Contenido completo del proyecto
+  • Características implementadas
+  • Especificaciones técnicas
+  • Análisis de archivos
+  • Cómo extender el proyecto
+  ⏱️ Tiempo de lectura: 25 minutos
+
+INDICE.txt (este archivo)
+  • Descripción de todos los archivos
+  • Guía de lectura
+  • Estructura completa del proyecto
+
+
+🏗️ ESTRUCTURA FÍSICA DEL PROYECTO
+───────────────────────────────────────────────────────────────────────────────
+
+Practica A2/
+│
+├── 📂 include/                     (Headers - Declaraciones)
+│   ├── Carga.h                     (Clase Carga + función template)
+│   └── Placa.h                     (Clase Placa - completamente inline)
+│
+├── 📂 src/                         (Fuentes - Implementación)
+│   ├── main.cpp                    (Programa principal)
+│   ├── Carga.cpp                   (Implementación de Carga)
+│   └── ejemplos.cpp                (Ejemplos adicionales)
+│
+├── 📄 CMakeLists.txt               (Configuración CMake)
+├── 📄 compilar.bat                 (Script Windows)
+├── 📄 compilar.sh                  (Script Linux/Mac)
+├── 📄 simulacion.exe               (Ejecutable compilado)
+│
+└── 📚 DOCUMENTACIÓN
+    ├── GUIA_RAPIDA.txt             (COMIENCE POR AQUÍ)
+    ├── README.md                   (Descripción general)
+    ├── DISENO.md                   (Análisis detallado)
+    ├── INSTALACION.md              (Guía de compilación)
+    ├── PROYECTO_COMPLETO.txt       (Resumen integral)
+    └── INDICE.txt                  (Este archivo)
+
+
+🎓 CONCEPTOS IMPLEMENTADOS
+───────────────────────────────────────────────────────────────────────────────
+
+✓ PROGRAMACIÓN ORIENTADA A OBJETOS
+  - Clase Carga con encapsulación
+  - Métodos getter para acceso controlado
+  - Separación de responsabilidades
+
+✓ TEMPLATES (PLANTILLAS) C++
+  - Función template calcularCampoElectrico<T>
+  - Clase template Placa<T>
+  - Soporta int, float, double, etc.
+  - Compilación zero-overhead
+
+✓ ARREGLOS MULTIDIMENSIONALES
+  - Matriz bidimensional estática 10×10
+  - Acceso directo O(1)
+  - Almacenamiento eficiente
+
+✓ ESTRUCTURAS DE DATOS
+  - std::vector para colección de cargas
+  - Matriz estática como estructura principal
+
+✓ MATEMÁTICAS
+  - Distancia euclidiana: √((x₂-x₁)² + (y₂-y₁)²)
+  - Ley de Coulomb: E = k×q/d²
+  - Superposición de campos eléctricos
+
+
+✅ REQUISITOS CUMPLIDOS
+───────────────────────────────────────────────────────────────────────────────
+
+✓ Carpetas include/ y src/ creadas y organizadas
+✓ Clase Carga con posición (x, y) y carga (q)
+✓ Constructores y métodos necesarios en Carga
+✓ Función template para calcular campo eléctrico
+✓ Matriz estática 10×10 en clase Placa
+✓ Cálculo de distancia euclidiana
+✓ Relleno de matriz con campo total (suma)
+✓ Impresión de matriz en formato tabular
+✓ Archivos .h y .cpp entendibles
+✓ Configuración CMake
+✓ Código compilable y funcional
+✓ Extensa documentación
+
+
+📊 ESTADÍSTICAS DEL PROYECTO
+───────────────────────────────────────────────────────────────────────────────
+
+Líneas de código fuente:        ~383
+Archivos header (.h):            2
+Archivos implementación (.cpp):  3
+Archivos documentación:          6
+Scripts de compilación:          2
+Configuración CMake:             1
+Archivos ejecutables:            1
+───────────────────────────────────────────────────────────────────────────────
+
+Total de archivos:             18
+Total de carpetas:              2
+Tamaño aproximado:            150 KB (incluyendo ejecutable)
+
+
+🚀 INSTRUCCIONES RÁPIDAS
+───────────────────────────────────────────────────────────────────────────────
+
+COMPILAR (RECOMENDADO):
+  Windows:     compilar.bat
+  Linux/Mac:   bash compilar.sh
+
+COMPILAR (MANUAL):
+  Cualquier SO: g++ -std=c++17 -o simulacion.exe src/main.cpp src/Carga.cpp -I include
+
+EJECUTAR:
+  Windows:     .\simulacion.exe
+  Linux/Mac:   ./simulacion
+
+
+💡 CÓMO NAVEGARSE POR EL PROYECTO
+───────────────────────────────────────────────────────────────────────────────
+
+PARA PRINCIPIANTES:
+  1. GUIA_RAPIDA.txt - Compilar y ejecutar
+  2. README.md - Entender qué hace
+  3. Ejecutar el programa
+
+PARA ENTENDER EL DISEÑO:
+  1. DISENO.md - Arquitectura completa
+  2. include/Carga.h - Definición
+  3. include/Placa.h - Clase principal
+  4. src/main.cpp - Ejemplo de uso
+
+PARA COMPILACIÓN:
+  1. INSTALACION.md - Métodos de compilación
+  2. compilar.bat/sh - Scripts automáticos
+  3. CMakeLists.txt - Configuración avanzada
+
+PARA RESOLVER PROBLEMAS:
+  1. GUIA_RAPIDA.txt - Preguntas frecuentes
+  2. INSTALACION.md - Troubleshooting
+  3. Revisar mensajes de error
+
+
+🔬 ANÁLISIS DE CÓDIGO
+───────────────────────────────────────────────────────────────────────────────
+
+CLASE CARGA:
+  Responsabilidad: Representar una carga puntual
+  Atributos: posX, posY, q
+  Métodos: getPosX(), getPosY(), getQ(), calcularDistancia()
+
+FUNCIÓN TEMPLATE:
+  Responsabilidad: Calcular E = k×q/d²
+  Parámetros: k (const), q (carga), d (distancia)
+  Retorna: Campo eléctrico del tipo T
+
+CLASE PLACA<T>:
+  Responsabilidad: Simular placa y cargas
+  Estructura: matriz[10][10], vector<Carga>
+  Métodos: agregarCarga(), calcularCampo(), imprimirMatriz()
+
+PROGRAMA PRINCIPAL:
+  Crea placa, agrega 3 cargas, calcula y muestra matriz
+
+
+📝 NOTAS IMPORTANTES
+───────────────────────────────────────────────────────────────────────────────
+
+• La matriz es ESTÁTICA de tamaño 10×10 (no dinámica)
+• Los templates se compilan en tiempo de compilación
+• Se previene división por cero en calcularCampoElectrico()
+• Las cargas NEGATIVAS generan campos NEGATIVOS
+• El CAMPO TOTAL es la SUMA de todos los aportes
+• Los ÍNDICES van de 0 a 9 para filas y columnas
+
+
+🎯 PRÓXIMOS PASOS SUGERIDOS
+───────────────────────────────────────────────────────────────────────────────
+
+1. Leer GUIA_RAPIDA.txt (5 minutos)
+2. Compilar el proyecto (1 minuto)
+3. Ejecutar y ver salida (30 segundos)
+4. Leer DISENO.md si quiere entender el diseño (20 minutos)
+5. Revisar el código fuente (15 minutos)
+6. Modificar y recompilar para experimentar (variable)
+7. Preparar reporte PDF con capturas y análisis
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+¿NECESITA AYUDA?
+
+• Para compilar: INSTALACION.md
+• Para preguntas rápidas: GUIA_RAPIDA.txt
+• Para entender diseño: DISENO.md
+• Para requisitos: README.md
+• Para resumen completo: PROYECTO_COMPLETO.txt
+
+═══════════════════════════════════════════════════════════════════════════════
+
+Documento: INDICE.txt
+Fecha: Febrero 2026
+Proyecto: Actividad 2 - Estructura de Datos
+Estado: COMPLETADO Y FUNCIONAL ✓
+
+═══════════════════════════════════════════════════════════════════════════════

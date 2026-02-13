@@ -1,0 +1,188 @@
+╔════════════════════════════════════════════════════════════════════╗
+║        GUÍA RÁPIDA - CAMPO ELÉCTRICO EN PLACA                      ║
+║    Estructura de Datos - Unidad 1 - Actividad 2                    ║
+╚════════════════════════════════════════════════════════════════════╝
+
+⚡ COMPILAR Y EJECUTAR EN 3 PASOS
+═══════════════════════════════════════════════════════════════════
+
+OPCIÓN 1 - Windows (Más Fácil)
+┌────────────────────────────────────────────────────────────────┐
+│ 1. Abra PowerShell/CMD en la carpeta del proyecto             │
+│ 2. Ejecute: compilar.bat                                      │
+│ 3. Ejecute: .\simulacion.exe                                  │
+└────────────────────────────────────────────────────────────────┘
+
+OPCIÓN 2 - Linux/Mac
+┌────────────────────────────────────────────────────────────────┐
+│ 1. Abra Terminal en la carpeta del proyecto                   │
+│ 2. Ejecute: bash compilar.sh                                  │
+│ 3. Ejecute: ./simulacion                                      │
+└────────────────────────────────────────────────────────────────┘
+
+OPCIÓN 3 - Compilación Manual (Cualquier SO)
+┌────────────────────────────────────────────────────────────────┐
+│ g++ -std=c++17 -o simulacion.exe src/main.cpp src/Carga.cpp   │
+│     -I include                                                 │
+│                                                                │
+│ Windows: simulacion.exe                                        │
+│ Linux/Mac: ./simulacion                                        │
+└────────────────────────────────────────────────────────────────┘
+
+═══════════════════════════════════════════════════════════════════
+
+📁 ARCHIVOS CLAVE
+═══════════════════════════════════════════════════════════════════
+
+Fuentes:
+  • include/Carga.h ........... Clase Carga + template función
+  • include/Placa.h ........... Clase Placa (template)
+  • src/main.cpp .............. Programa principal
+  • src/Carga.cpp ............. Implementación Carga
+
+Documentación:
+  • README.md ................. Descripción general
+  • DISENO.md ................. Análisis detallado del diseño
+  • INSTALACION.md ............ Guía completa de compilación
+  • PROYECTO_COMPLETO.txt .... Resumen integral
+
+Compilación:
+  • CMakeLists.txt ............ Configuración CMake
+  • compilar.bat .............. Script Windows
+  • compilar.sh ............... Script Linux/Mac
+
+═══════════════════════════════════════════════════════════════════
+
+❓ PREGUNTAS FRECUENTES
+═══════════════════════════════════════════════════════════════════
+
+P: ¿Qué es lo nuevo que genera?
+R: Una matriz 10×10 con valores del campo eléctrico calculados
+   desde 3 cargas puntuales diferentes.
+
+P: ¿Puedo agregar más cargas?
+R: Sí, en main.cpp agregue:
+   placa.agregarCarga(Carga(x, y, q));
+
+P: ¿Puedo cambiar el tipo de datos?
+R: Sí, use Placa<float> o Placa<int> en lugar de Placa<double>
+
+P: ¿Cómo cambio la constante k?
+R: En main.cpp, cambie el parámetro al crear la placa:
+   Placa<double> placa(8.99);  // Valor más realista
+
+P: ¿Necesito CMake?
+R: No, use compilar.bat/sh o g++ directamente
+
+═══════════════════════════════════════════════════════════════════
+
+🚨 SOLUCIONAR PROBLEMAS
+═══════════════════════════════════════════════════════════════════
+
+"No se reconoce g++"
+  → Instale MinGW (Windows) o build-essential (Linux)
+  
+"Error de compilación"
+  → Verifique estar en la carpeta correcta
+  → Intente compilar manualmente para ver el error completo
+  
+"Ejecutable no se ejecuta"
+  → Windows: use .\simulacion.exe
+  → Linux/Mac: use ./simulacion
+  
+"¿Dónde está el binario?"
+  → En la raíz del proyecto (simulacion.exe)
+  → O en build/ si usó CMake
+
+═══════════════════════════════════════════════════════════════════
+
+📊 SALIDA ESPERADA
+═══════════════════════════════════════════════════════════════════
+
+  1. Título del programa
+  2. Cargas siendo agregadas (3 ejemplos por defecto)
+  3. Mensaje "Cálculo completado"
+  4. Matriz 10×10 con valores numéricos
+  5. Demostración de tipos numér icos (float, int)
+  6. Mensaje "PROGRAMA FINALIZADO EXITOSAMENTE"
+
+═══════════════════════════════════════════════════════════════════
+
+🎯 ESTRUCTURA DEL CÓDIGO
+═══════════════════════════════════════════════════════════════════
+
+class Carga
+├─ double posX, posY, q
+└─ métodos getter + calcularDistancia()
+
+template<typename T>
+T calcularCampoElectrico(T k, T q, T d)
+└─ E = k * q / (d * d)
+
+template<typename T>
+class Placa
+├─ T matriz[10][10]
+├─ vector<Carga> cargas
+├─ agregarCarga()
+├─ calcularCampo()
+└─ imprimirMatriz()
+
+═══════════════════════════════════════════════════════════════════
+
+💻 EJEMPLO DE CÓMO USAR
+═══════════════════════════════════════════════════════════════════
+
+// Crear placa
+Placa<double> placa(9.0);
+
+// Agregar cargas
+placa.agregarCarga(Carga(2, 2, 5.0));   // positiva
+placa.agregarCarga(Carga(7, 7, -3.0));  // negativa
+
+// Calcular
+placa.calcularCampo();
+
+// Ver resultados
+placa.imprimirMatriz();
+
+// Acceder a valor específico
+double valor = placa.obtenerValor(5, 5);
+
+═══════════════════════════════════════════════════════════════════
+
+✅ CHECKLIST DE REQUISITOS
+═══════════════════════════════════════════════════════════════════
+
+✓ Carpetas include/ y src/ creadas
+✓ Clase Carga con posición y carga
+✓ Función template para campo eléctrico
+✓ Clase Placa (template)
+✓ Matriz estática 10×10
+✓ Cálculo con distancia euclidiana
+✓ Llenar matriz con suma de campos
+✓ Visualización en consola
+✓ Archivos .h y .cpp
+✓ CMakeLists.txt configurado
+✓ Script de compilación
+✓ Código compilable y funcional
+✓ Documentación completa
+
+═══════════════════════════════════════════════════════════════════
+
+📋 PRÓXIMOS PASOS
+═══════════════════════════════════════════════════════════════════
+
+1. Compile y ejecute el programa
+2. Revise la salida de la matriz
+3. Lea el código en include/ y src/
+4. Modifique main.cpp para experimentar
+5. Prepare el reporte PDF con:
+   - Explicación del diseño
+   - Capturas de salida
+   - Análisis de implementación
+
+═══════════════════════════════════════════════════════════════════
+
+Para ayuda detallada, vea README.md, DISENO.md o INSTALACION.md
+
+═══════════════════════════════════════════════════════════════════
